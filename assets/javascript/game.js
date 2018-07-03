@@ -1,5 +1,5 @@
 // Make sure the document has loaded
-$(document).ready();
+$(document).ready(function(){
 
 // Variables 
 var randomNumber = Math.floor(Math.random()*102)+19;
@@ -7,6 +7,9 @@ var pooh = Math.floor(Math.random()*12)+1;
 var eeyore = Math.floor(Math.random()*12)+1;
 var tigger = Math.floor(Math.random()*12)+1;
 var piglet = Math.floor(Math.random()*12)+1;
+// var buttons = [pooh, eeyore, tigger, piglet];
+// Also needed away to prevent the same number from being repeated for the Character Cards.
+// But I also didn't get a chance to update.
 var myScore = 0;
 var wins = 0;
 var losses = 0;
@@ -25,7 +28,11 @@ function reset() {
 
 // Game 
 // I'm pretty sure the code below can be shortened in a loop or something, but I haven't placed the loop as yet.
+// There's a for each function for each on click function, but I didn't get a chance to research it
 $("#randomNumber").text(randomNumber);
+
+//$(".selected").each(click, ...)
+    
 
 $("#Pooh").click(function(){
     $("#Pooh").attr("poohValue", pooh);
@@ -90,5 +97,5 @@ $("#Piglet").click(function(){
         $("#losses").html("Losses: " + wins);        
         reset();
     }
-})
+})});
 
